@@ -39,4 +39,6 @@ jobs:
         include-hidden-files: true
         path: |
           .next
+          node_modules
+          public
           package.json
