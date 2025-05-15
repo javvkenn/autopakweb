@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x, 20.x, 22.x]
+        node-version: [20.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -28,3 +28,12 @@ jobs:
         cache: 'npm'
     - run: npm install --legacy-peer-deps
     - run: npm run build
+    - name: Archive build files
+      run: |
+        tar -czf build-artifact.tar.gz .next public node_modules package.json package-lock.json
+
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: nextjs-build
+        path: build-artifact.tar.gz
