@@ -38,6 +38,4 @@ jobs:
         name: web-build
         path: |
           .next
-          node_modules
-          public
           package.json
