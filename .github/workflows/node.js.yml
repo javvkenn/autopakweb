@@ -33,7 +33,7 @@ jobs:
         tar -czf build-artifact.tar.gz .next public node_modules package.json package-lock.json
 
     - name: Upload build artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v3.0.1
       with:
         name: nextjs-build
         path: build-artifact.tar.gz
