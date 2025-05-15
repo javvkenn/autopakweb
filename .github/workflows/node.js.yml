@@ -33,11 +33,11 @@ jobs:
         tar -czf build-artifact.tar.gz .next public node_modules package.json package-lock.json
 
     - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: web-build
-          path: |
-            .next
-            node_modules
-            public
-            package.json
+      uses: actions/upload-artifact@v3
+      with:
+        name: web-build
+        path: |
+          .next
+          node_modules
+          public
+          package.json
